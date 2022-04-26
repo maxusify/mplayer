@@ -1,0 +1,12 @@
+appId: me.michalpedzik.mplayer
+productName: MPlayer
+copyright: Copyright © 2022 Michał Pędzik
+directories:
+  output: dist
+  buildResources: resources
+files:
+  - from: .
+    filter:
+      - package.json
+      - app
+publish: null
