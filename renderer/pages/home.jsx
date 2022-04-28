@@ -3,6 +3,8 @@ import Head from "next/head";
 import Link from "next/link";
 
 import electron from "electron";
+import { Container, Flex, VStack } from "@chakra-ui/react";
+import Topbar from "../components/Topbar";
 
 function Home() {
   const ipcRenderer = electron.ipcRenderer || false;
@@ -12,20 +14,22 @@ function Home() {
   }
 
   return (
-    <React.Fragment>
-      <Head>
-        <title>Home - Nextron (with-javascript)</title>
-      </Head>
-      <div>
-        <p>
-          ⚡ Electron + Next.js ⚡ -
-          <Link href="/next">
-            <a>Go to next page</a>
-          </Link>
-        </p>
-        <img src="/images/logo.png" />
-      </div>
-    </React.Fragment>
+    <Container maxW="container.xl" p={0}>
+      <Flex h="100hv" py={20} bgColor="red.100">
+        {/* Topbar */}
+        <Topbar />
+        {/* Sidebar */}
+
+        {/* Content */}
+      </Flex>
+      <VStack
+        w="full"
+        h="full"
+        p={10}
+        spacing={10}
+        alignItems="flex-start"
+      ></VStack>
+    </Container>
   );
 }
 
