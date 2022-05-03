@@ -10,6 +10,7 @@ import {
   Progress,
   Stack,
 } from "@chakra-ui/react";
+import Link from "next/link";
 import React from "react";
 import {
   FiArrowLeft,
@@ -24,12 +25,13 @@ import {
 
 function Sidebar() {
   return (
-    <Flex w={300} h="100vh" bg="gray.100">
+    <Flex minW={300} h="100vh" bg="gray.100">
       <Flex
-        w="full"
+        w="fit-content"
         direction="column"
         justifyContent="space-between"
         alignItems="flex-start"
+        boxSizing="border-box"
       >
         <Box p={5} mt={10}>
           {/* Główny nagłówek */}
@@ -40,13 +42,19 @@ function Sidebar() {
             <Heading fontSize="sm">Ogólne</Heading>
             <Flex direction="column" alignItems="flex-start" p={2}>
               <Button leftIcon={<FiHome />} fontSize="sm" variant="unstyled">
-                Strona Główna
+                <Link href="/home">
+                  <a>Strona Główna</a>
+                </Link>
               </Button>
               <Button leftIcon={<FiList />} fontSize="sm" variant="unstyled">
-                Twoja Biblioteka
+                <Link href="/library">
+                  <a>Biblioteka</a>
+                </Link>
               </Button>
               <Button leftIcon={<FiEdit />} fontSize="sm" variant="unstyled">
-                Edytor
+                <Link href="/editor">
+                  <a>Edytor</a>
+                </Link>
               </Button>
             </Flex>
           </Flex>

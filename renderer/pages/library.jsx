@@ -6,7 +6,7 @@ import { Sidebar, Topbar, Content } from "../components";
 
 import SongRow from "../components/songs/SongRow";
 
-function Home() {
+function Library() {
   const ipcRenderer = electron.ipcRenderer || false;
 
   if (ipcRenderer) {
@@ -26,7 +26,7 @@ function Home() {
               mt="16"
               textAlign="center"
             >
-              <Heading>Witaj! Czego chcesz dziś posłuchać?</Heading>
+              <Heading>Biblioteka utworów</Heading>
               <Text fontWeight="bold" py="2">
                 Aktualnie posiadasz 125 utworów w bibliotece.Twoja łączna liczba
                 odsłuchań to 56 758!
@@ -39,7 +39,6 @@ function Home() {
               mt="16"
               textAlign="center"
             >
-              <Heading fontSize="24">Twoje TOP5 ulubionych utworów</Heading>
               <Flex w="full" direction="column">
                 <SongRow />
                 <SongRow />
@@ -48,12 +47,6 @@ function Home() {
                 <SongRow />
               </Flex>
             </Flex>
-
-            <Flex direction="row" maxW="container.lg" mt="5">
-              <Button>Przejdź do biblioteki</Button>
-              <Button>Dodaj utwór</Button>
-              <Button>Historia odsłuchań</Button>
-            </Flex>
           </Content>
         </Flex>
       </Flex>
@@ -61,4 +54,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Library;
