@@ -1,4 +1,5 @@
 import { Button, HStack, ListItem, UnorderedList } from "@chakra-ui/react";
+import { AiFillPlaySquare } from "react-icons/ai";
 import React from "react";
 
 function Topbar() {
@@ -6,14 +7,15 @@ function Topbar() {
     <HStack w="full" h={35} bgColor="gray.300" py="2">
       {/* Pasek menu */}
       <UnorderedList
-        width="sm"
         display="flex"
-        alignItems="flex-start"
         flexDir="row"
-        justifyContent="space-evenly"
-        listStyleType="none"
+        justifyContent="space-between"
+        alignItems="center"
+        py={10}
       >
-        <ListItem fontWeight="bold">MPlayer</ListItem>
+        <ListItem>
+          <AiFillPlaySquare /> MPlayer
+        </ListItem>
         <ListItem>Plik</ListItem>
         <ListItem>Edycja</ListItem>
         <ListItem>Widok</ListItem>
