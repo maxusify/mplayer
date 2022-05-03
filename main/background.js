@@ -17,8 +17,9 @@ if (isProd) {
     width: 1280,
     height: 720,
     frame: true,
-    resizable: false,
+    resizable: true,
     fullscreenable: false,
+    transparent: true,
   });
 
   if (isProd) {

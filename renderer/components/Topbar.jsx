@@ -1,29 +1,46 @@
-import { Button, HStack, ListItem, UnorderedList } from "@chakra-ui/react";
-import { AiFillPlaySquare } from "react-icons/ai";
+import { Flex, Button, Stack, IconButton, Icon } from "@chakra-ui/react";
+import { FiX, FiMinimize, FiHeadphones as LogoIcon } from "react-icons/fi";
 import React from "react";
 
 function Topbar() {
   return (
-    <HStack w="full" h={35} bgColor="gray.300" py="2">
-      {/* Pasek menu */}
-      <UnorderedList
-        display="flex"
-        flexDir="row"
-        justifyContent="space-between"
-        alignItems="center"
-        py={10}
-      >
-        <ListItem>
-          <AiFillPlaySquare /> MPlayer
-        </ListItem>
-        <ListItem>Plik</ListItem>
-        <ListItem>Edycja</ListItem>
-        <ListItem>Widok</ListItem>
-        <ListItem>Pomoc</ListItem>
-      </UnorderedList>
-      {/* Pasek manipulacją okna */}
-      <HStack></HStack>
-    </HStack>
+    <Flex
+      alignItems="center"
+      justifyContent="space-between"
+      w="full"
+      h={35}
+      py="2"
+      shadow="md"
+      position="fixed"
+      bg="white"
+    >
+      <Stack direction="row" spacing={4}>
+        <Button
+          variant="unstyled"
+          leftIcon={<LogoIcon />}
+          paddingLeft="3"
+          fontSize={14}
+        >
+          MPlayer
+        </Button>
+        <Button variant="unstyled" fontWeight="normal" fontSize={14}>
+          Plik
+        </Button>
+        <Button variant="unstyled" fontWeight="normal" fontSize={14}>
+          Edycja
+        </Button>
+        <Button variant="unstyled" fontWeight="normal" fontSize={14}>
+          Widok
+        </Button>
+        <Button variant="unstyled" fontWeight="normal" fontSize={14}>
+          Pomoc
+        </Button>
+      </Stack>
+      <Stack direction="row" spacing={0}>
+        <IconButton icon={<FiMinimize />} variant="ghost" />
+        <IconButton icon={<FiX />} variant="ghost" />
+      </Stack>
+    </Flex>
   );
 }
 

@@ -1,7 +1,7 @@
 import React from "react";
 import electron from "electron";
 
-import { Container, Flex, VStack } from "@chakra-ui/react";
+import { Container, Flex, HStack } from "@chakra-ui/react";
 
 import { Sidebar, Topbar, Content } from "../components";
 
@@ -14,14 +14,12 @@ function Home() {
 
   return (
     <Container maxW="container.xl" p={0}>
-      <Flex h="100hv">
-        {/* Topbar */}
+      <Flex direction="column" overflow="hidden">
         <Topbar />
-        {/* Sidebar */}
-        <VStack>
+        <HStack w="100vw">
           <Sidebar />
           <Content />
-        </VStack>
+        </HStack>
       </Flex>
     </Container>
   );
