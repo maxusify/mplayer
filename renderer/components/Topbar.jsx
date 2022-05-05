@@ -1,5 +1,5 @@
-import { Flex, Button, Stack, IconButton, Icon } from "@chakra-ui/react";
-import { FiX, FiMinimize, FiHeadphones as LogoIcon } from "react-icons/fi";
+import { Flex, Button, Stack, IconButton, Icon, Link } from "@chakra-ui/react";
+import { FiX, FiMinimize, FiHeadphones as LogoIcon, FiSettings } from "react-icons/fi";
 import React from "react";
 
 function Topbar() {

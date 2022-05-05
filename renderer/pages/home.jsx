@@ -1,7 +1,7 @@
 import React from "react";
 import electron from "electron";
 
-import { Container, Flex, Heading, Button, Text } from "@chakra-ui/react";
+import { Container, Flex, Heading, Button, Text, HStack, Link } from "@chakra-ui/react";
 import { Sidebar, Topbar, Content } from "../components";
 
 import SongRow from "../components/songs/SongRow";
@@ -36,10 +36,10 @@ function Home() {
             <Flex
               direction="column"
               maxW="container.lg"
-              mt="16"
+              mt="10"
               textAlign="center"
             >
-              <Heading fontSize="24">Twoje TOP5 ulubionych utworów</Heading>
+              <Heading fontSize="24" p="2">Twoje TOP5 ulubionych utworów</Heading>
               <Flex w="full" direction="column">
                 <SongRow />
                 <SongRow />
@@ -49,11 +49,15 @@ function Home() {
               </Flex>
             </Flex>
 
-            <Flex direction="row" maxW="container.lg" mt="5">
-              <Button>Przejdź do biblioteki</Button>
-              <Button>Dodaj utwór</Button>
-              <Button>Historia odsłuchań</Button>
-            </Flex>
+            <HStack spacing="5" justify="center" p="5">
+              <Button>
+                <Link href="/library">
+                  <a>Przejdź do biblioteki</a>
+                </Link>
+              </Button>
+              <Button disabled>Dodaj utwór</Button>
+              <Button disabled>Historia odsłuchań</Button>
+            </HStack>
           </Content>
         </Flex>
       </Flex>

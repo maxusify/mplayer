@@ -9,6 +9,7 @@ import {
   IconButton,
   Progress,
   Stack,
+  VStack,
 } from "@chakra-ui/react";
 import Link from "next/link";
 import React from "react";
@@ -20,8 +21,10 @@ import {
   FiList,
   FiPause,
   FiRepeat,
+  FiSettings,
   FiVolume,
 } from "react-icons/fi";
+import AlbumRow from "./songs/AlbumRow";
 
 function Sidebar() {
   return (
@@ -38,7 +41,7 @@ function Sidebar() {
           <Heading fontSize="md">Szybkie Menu</Heading>
 
           {/* Podmenu ogólne */}
-          <Flex w="full" direction="column" p={2} mt={5}>
+          <Flex w="full" direction="column" p={2} mt={1}>
             <Heading fontSize="sm">Ogólne</Heading>
             <Flex direction="column" alignItems="flex-start" p={2}>
               <Button leftIcon={<FiHome />} fontSize="sm" variant="unstyled">
@@ -56,13 +59,24 @@ function Sidebar() {
                   <a>Edytor</a>
                 </Link>
               </Button>
+              <Button leftIcon={<FiSettings />} fontSize="sm" variant="unstyled">
+                <Link href="/settings">
+                  <a>Ustawienia</a>
+                </Link>
+              </Button>
             </Flex>
           </Flex>
 
           {/* Podmenu kolekcji */}
           <Flex w="full" direction="column" p={2}>
             <Heading fontSize="sm">Kolekcje</Heading>
-            <Flex w="full" direction="column"></Flex>
+            <VStack w="full" spacing="2" p={2}>
+              <AlbumRow id="1" />
+              <AlbumRow id="2" />
+              <AlbumRow id="3" />
+              <AlbumRow id="4" />
+              <AlbumRow id="5" />
+            </VStack>
           </Flex>
         </Box>
 

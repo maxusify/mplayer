@@ -9,12 +9,15 @@ function SongRow(props) {
       direction="row"
       alignItems="center"
       justifyContent="space-between"
-      p="1"
+      p="2"
+      bg="gray.100"
+      borderRadius={10}
+      mb="1"
     >
       <Flex direction="row" alignItems="center" justifyContent="center">
         {/* Cover */}
         <Image
-          h="16"
+          h="14"
           src="https://cdn.discordapp.com/attachments/213066003230228480/971134881553866812/pobrane.jpeg"
           alt="Album cover"
         />
@@ -24,9 +27,9 @@ function SongRow(props) {
           px="5"
           direction="column"
           alignItems="center"
-          justifyContent="center"
+          justifyContent="flex-start"
         >
-          <Text>Can You Feel My Heart</Text>
+          <Text fontWeight="bold">Can You Feel My Heart</Text>
           <Text>Bring Me The Horizon</Text>
         </Flex>
       </Flex>
